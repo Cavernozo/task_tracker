@@ -4,6 +4,7 @@ app = Flask(__name__)
 
 @app.route("/index")
 def ola():
-    return "<h1>Ola,mundo</h1>"
+    return render_template('main.html', titulo='Task_Tracker')
+
 
 app.run(debug=True)
