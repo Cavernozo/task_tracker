@@ -15,8 +15,8 @@ lista = [task1, task2]
 
 app = Flask(__name__)
 
-@app.route("/index")
-def ola():
+@app.route("/")
+def index():
 
     return render_template('main.html', titulo='Task_Tracker' ,tasks= lista)
 
@@ -24,7 +24,7 @@ def ola():
 def novo():
     return render_template("novo.html", titulo = "New Task")
 
-@app.route("/criar")
+@app.route("/criar", methods= ['POST',])
 def criar():
     nome = request.form['nome']
     data_ini = request.form['data_ini']
