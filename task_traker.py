@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 class Task():
     def __init__(self, nome, data_ini, status, data_upd, descricao):
@@ -34,6 +34,6 @@ def criar():
     task = Task(nome, data_ini, status, data_upd, descricao)
 
     lista.append(task)
-    return render_template('main.html', titulo='Task_Tracker', tasks = lista)
+    return redirect('/')
 
 app.run(debug=True)
